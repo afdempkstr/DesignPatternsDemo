@@ -1,8 +1,8 @@
-﻿using System.Diagnostics.Eventing.Reader;
+﻿using System;
 
 namespace DesignPatternsDemo
 {
-    public class Location
+    public class Location : IEquatable<Location>
     {
         public double Latitude { get; }
 
@@ -22,6 +22,11 @@ namespace DesignPatternsDemo
 
             Latitude = latitude;
             Longitude = longitude;
+        }
+
+        public bool Equals(Location other)
+        {
+            throw new NotImplementedException();
         }
     }
 }
