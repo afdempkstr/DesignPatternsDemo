@@ -50,5 +50,10 @@ namespace DesignPatternsDemo
 
             return 6376500.0 * (2.0 * Math.Atan2(Math.Sqrt(d3), Math.Sqrt(1.0 - d3)));
         }
+
+        public override string ToString()
+        {
+            return $"({Longitude},{Latitude})";
+        }
     }
 }
