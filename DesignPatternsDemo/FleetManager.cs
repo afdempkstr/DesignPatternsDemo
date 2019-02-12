@@ -29,8 +29,10 @@ namespace DesignPatternsDemo
         public void RemoveVehicle(string id)
         {
             var index = _vehicles.FindIndex(v => v.Id == id);
-            if (index > 0)
+            if (index >= 0)
             {
+                var vehicle = _vehicles[index];
+                vehicle.LocationChanged -= VehicleOnLocationChanged;
                 _vehicles.RemoveAt(index);
             }
         }

@@ -16,9 +16,15 @@ namespace DesignPatternsDemo
             myCar.LocationChanged += MyCarOnLocationChanged;
 
             myCar.Location = new Location(10, 10);
-            
 
-            
+            fleetManager.RemoveVehicle(myCar.Id);
+
+            for (double i = myCar.Location.Latitude; i >= -10; i--)
+            {
+                myCar.Location = new Location(i, i);
+            }
+
+            Console.ReadLine();
         }
 
         private static void PrintCar(object sender, EventArgs e)
