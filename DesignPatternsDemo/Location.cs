@@ -1,4 +1,6 @@
-﻿namespace DesignPatternsDemo
+﻿using System.Diagnostics.Eventing.Reader;
+
+namespace DesignPatternsDemo
 {
     public class Location
     {
@@ -8,6 +10,16 @@
 
         public Location(double latitude, double longitude)
         {
+            if (latitude > 90 || latitude < -90)
+            {
+                throw new CoordinateOutOfRangeException("Latitude is out of range");
+            }
+
+            if (longitude > 180 || longitude < -180)
+            {
+                throw new CoordinateOutOfRangeException("Longitude is out of range");
+            }
+
             Latitude = latitude;
             Longitude = longitude;
         }
