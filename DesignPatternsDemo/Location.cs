@@ -26,7 +26,28 @@ namespace DesignPatternsDemo
 
         public bool Equals(Location other)
         {
-            throw new NotImplementedException();
+            if (other == null)
+            {
+                return false;
+            }
+
+            if (object.ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            return (Math.Abs(this.Latitude - other.Latitude) < 1e-6 &&
+                    Math.Abs(this.Longitude - other.Longitude) < 1e-6);
         }
+
+        //public double Distance(Location other)
+        //{
+
+        //}
+
+        //private double EuclideanDistance(Location other)
+        //{
+            
+        //}
     }
 }
