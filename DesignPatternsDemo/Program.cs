@@ -16,7 +16,9 @@ namespace DesignPatternsDemo
             myCar.Location = new Location(28, 32);
             myCar.Location = new Location(28, 32);
             myCar.Location = new Location(30, 32);
-            myCar.Location = null;
+            
+            var fleetManager = new FleetManager(new Location(0, 0));
+            fleetManager.AddVehicle(myCar);
         }
 
         private static void PrintCar(object sender, EventArgs e)
